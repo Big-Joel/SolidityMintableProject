@@ -70,6 +70,9 @@ class App extends Component {
   }
 
   getTotalSupply = async () => {
+    //A few days after writing this function I realised that the 
+    //ERC20 token already has a totalSupply function. Silly!
+    //Worse, this here might be wrong if tokens are burnt?
     let weiRaised = await this.tokenSaleInstance.methods.weiRaised().call();
     let rate = await this.tokenSaleInstance.methods.rate().call();
     return weiRaised * rate;
