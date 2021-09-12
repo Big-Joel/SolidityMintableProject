@@ -657,7 +657,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1947,
+                                "referencedDeclaration": 1984,
                                 "src": "2772:4:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Address_$77",
@@ -778,10 +778,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1936,
-                        1937
+                        1973,
+                        1974
                       ],
-                      "referencedDeclaration": 1937,
+                      "referencedDeclaration": 1974,
                       "src": "2756:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1021,10 +1021,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1936,
-                        1937
+                        1973,
+                        1974
                       ],
-                      "referencedDeclaration": 1937,
+                      "referencedDeclaration": 1974,
                       "src": "2959:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1893,10 +1893,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1936,
-                                1937
+                                1973,
+                                1974
                               ],
-                              "referencedDeclaration": 1937,
+                              "referencedDeclaration": 1974,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -1982,7 +1982,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 1947,
+                                          "referencedDeclaration": 1984,
                                           "type": "library Address",
                                           "value": "this"
                                         },
@@ -2248,10 +2248,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                1936,
-                                1937
+                                1973,
+                                1974
                               ],
-                              "referencedDeclaration": 1937,
+                              "referencedDeclaration": 1974,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -2326,7 +2326,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-04T09:20:24.498Z",
+  "updatedAt": "2021-09-11T07:17:52.282Z",
   "devdoc": {
     "details": "Collection of functions related to the address type",
     "methods": {}

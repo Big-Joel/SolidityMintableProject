@@ -59,6 +59,7 @@ class App extends Component {
   updateUserTokens = async () => {
     let userTokens = await this.tokenInstance.methods.balanceOf(this.accounts[0]).call();
     this.setState({userTokens: userTokens});
+    this.updateTotalSupply();
   }
 
   listenToTokenTransfer = () => {
@@ -73,9 +74,14 @@ class App extends Component {
     //A few days after writing this function I realised that the 
     //ERC20 token already has a totalSupply function. Silly!
     //Worse, this here might be wrong if tokens are burnt?
+    /*
     let weiRaised = await this.tokenSaleInstance.methods.weiRaised().call();
     let rate = await this.tokenSaleInstance.methods.rate().call();
     return weiRaised * rate;
+    */
+    //Now fixed here, left the stuff above for history.
+    let totalSupply = await this.tokenInstance.methods.totalSupply().call();
+    return totalSupply;
   }
 
   updateTotalSupply = async () => {
@@ -84,6 +90,12 @@ class App extends Component {
 
   handleBuyTokens = async() => {
     await this.tokenSaleInstance.methods.buyTokens(this.accounts[0]).send({from: this.accounts[0], value: this.web3.utils.toWei("1","wei")});
+  }
+
+  handleBurnToken = async() => {
+    //It will emit this event: emit Transfer(account, address(0), amount);
+    await this.tokenInstance.methods.burn(1).send({from: this.accounts[0]});
+    
   }
 
   handleInputChange = (event) => {
@@ -116,6 +128,8 @@ class App extends Component {
         <p>You currently have: {this.state.userTokens} CAPPU Tokens</p>
         <button type="button" onClick={this.handleBuyTokens}>Buy more tokens</button>
         <p>Total supply of CAPPU tokens: {this.state.totalSupply}</p>
+        <p>Get your coffee (and burn a token!)</p>
+        <button type="button" onClick={this.handleBurnToken}>Get coffee</button>
       </div>
     );
   }
